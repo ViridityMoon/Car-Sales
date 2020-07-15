@@ -18,7 +18,6 @@ export const initialState = {
   };
 
 export const reducer = (state = initialState, action) => {
-    console.log(action);
     switch (action.type) {
         case ADD_FEATURE :
             return {
@@ -41,8 +40,8 @@ export const reducer = (state = initialState, action) => {
                     features: state.features.filter(item => item.id !== action.payload.id)
                 },
                 additionalFeatures: [...state.additionalFeatures, action.payload]
-            }
+            };
         default:
-            return 
+            return state;
     };
 };

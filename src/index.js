@@ -10,10 +10,12 @@ import './styles.scss';
 import { reducer } from './reducer';
 
 const store = createStore(reducer);
+console.log('This is my State:', store.getState());
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-<Provider store={store}>
-    <App />
-</Provider>
-, rootElement);
+    <Provider store={store}>
+        <App />
+    </Provider>, 
+    rootElement
+);
