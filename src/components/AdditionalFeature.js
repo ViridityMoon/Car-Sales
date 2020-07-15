@@ -6,9 +6,15 @@ import { addFeature } from '../actions/titleActions';
 
 const AdditionalFeature = props => {
   console.log(props);
+
+  const onClickFeature = e => {
+    e.preventDefault();
+    props.addFeature(props.feature);
+  };
+
   return (
     <li>
-      <button onClick={addFeature} className="button">Add</button>
+      <button onClick={onClickFeature} className="button">Add</button>
       {props.feature.name} (+{props.feature.price})
     </li>
   );
